@@ -42,3 +42,5 @@ store.dispatch(addCounter);
 store.dispatch({type: 'SUB'});
 
 store.dispatch({type: 'ADD_NUMBER', value: 10 });
+
+console.log('ok');
