@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import classes from './Auth.css';
 import Button from "../../components/UI/Button/Button";
 import Input from "../../components/UI/Input/Input";
+import credentials from '../../../credentials/credentials'
 import is from 'is_js';
 import axios from 'axios';
 
@@ -46,7 +47,7 @@ export default class Auth extends Component {
         };
 
         try {
-            const response = await axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyA9JAua1kO8rFA0U7zqjBGwAWzHZ7tuhlY', authData);
+            const response = await axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=' + credentials.firebaseApiKey, authData);
             console.log(response.data)
         } catch (e) {
             console.log(e);
@@ -62,7 +63,7 @@ export default class Auth extends Component {
         };
 
         try {
-            const response = await axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyA9JAua1kO8rFA0U7zqjBGwAWzHZ7tuhlY', authData);
+            const response = await axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key='+ credentials.firebaseApiKey, authData);
             console.log(response.data)
         } catch (e) {
             console.log(e);
