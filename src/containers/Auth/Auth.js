@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import classes from './Auth.css';
 import Button from "../../components/UI/Button/Button";
 import Input from "../../components/UI/Input/Input";
-import credentials from '../../../credentials/credentials'
+import credentials from '../../credentials/credentials';
 import is from 'is_js';
 import axios from 'axios';
 
