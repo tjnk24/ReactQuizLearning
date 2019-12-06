@@ -127,7 +127,7 @@ export function quizAnswerClick(answerId) {
                 if (isQuizFinished(state)) {
                     dispatch(finishQuiz())
                 } else {
-                    dispatch(quizNextQuestion(this.state.activeQuestion + 1))
+                    dispatch(quizNextQuestion(state.activeQuestion + 1))
                 }
                 window.clearTimeout(timeout);
             }, 1000);
