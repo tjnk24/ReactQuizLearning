@@ -2,15 +2,17 @@ import credentials from "../../credentials/credentials";
 import axios from 'axios';
 import {AUTH_LOGOUT, AUTH_SUCCESS} from "./actionTypes";
 
+const API_KEY = 'AIzaSyA9JAua1kO8rFA0U7zqjBGwAWzHZ7tuhlY'
+
 export function auth(email, password, isLogin) {
     return async dispatch => {
         const authData = {
           email, password, returnSecureToken: true
         };
 
-        let url = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key='+ credentials.firebaseApiKey;
+        let url = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key='+ API_KEY;
         if (isLogin) {
-            url = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=' + credentials.firebaseApiKey;
+            url = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=' + API_KEY;
         }
         const response = await axios.post(url, authData);
         const data = response.data;

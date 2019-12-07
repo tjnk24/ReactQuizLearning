@@ -3,3 +3,5 @@
 /package-lock.json
 /yarn.lock
 /src/credentials
+/build
+/.env.local
